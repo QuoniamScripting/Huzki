@@ -195,7 +195,6 @@ local function MHOBN_fake_script() -- _120128312803.LocalScript
 	local frame = main:WaitForChild("MainFrame")
 	local m = frame:WaitForChild("ScrollingFrame")
 	local player = game:GetService("Players").LocalPlayer
-	frame.TopBar.Text = "HUZKI | Refinery Caves"
 	local char = player.Character
 	local map = workspace:WaitForChild("Map")
 	local buildings = map:WaitForChild("Buildings")
