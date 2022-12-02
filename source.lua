@@ -194,7 +194,6 @@ local function UHUROY_fake_script() -- _120128312803.LocalScript
 	local frame = main:WaitForChild("MainFrame")
 	local m = frame:WaitForChild("ScrollingFrame")
 	local player = game:GetService("Players").LocalPlayer
-	frame.TopBar.Text = "HUZKI | v"..game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/QuoniamScripting/Huzki/main/versionid")
 	local char = player.Character
 	local map = workspace:WaitForChild("Map")
 	local buildings = map:WaitForChild("Buildings")
