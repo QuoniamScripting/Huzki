@@ -52,7 +52,7 @@ TopBar.Parent = MainFrame
 TopBar.BackgroundColor3 = Color3.new(0.219608, 0.219608, 0.219608)
 TopBar.Size = UDim2.new(0, 400, 0, 25)
 TopBar.Font = Enum.Font.ArialBold
-TopBar.Text = "HUZKI | Version 0.0"
+TopBar.Text = "HUZKI"
 TopBar.TextColor3 = Color3.new(0.419608, 0.419608, 0.419608)
 TopBar.TextScaled = true
 TopBar.TextSize = 14
@@ -68,7 +68,6 @@ ScrollingFrame.BackgroundTransparency = 1
 ScrollingFrame.BorderSizePixel = 0
 ScrollingFrame.Position = UDim2.new(0, 0, 0.0833333358, 0)
 ScrollingFrame.Size = UDim2.new(0, 400, 0, 275)
-ScrollingFrame.CanvasPosition = Vector2.new(0, 150)
 
 UIListLayout.Parent = ScrollingFrame
 UIListLayout.Padding = UDim.new(0, 2)
@@ -187,7 +186,7 @@ UICorner_10.CornerRadius = UDim.new(0, 16)
 
 -- Scripts
 
-local function MHOBN_fake_script() -- _120128312803.LocalScript 
+local function UHUROY_fake_script() -- _120128312803.LocalScript 
 	local script = Instance.new('LocalScript', _120128312803)
 
 	script.Parent.Name = game:GetService("HttpService"):GenerateGUID()
@@ -195,17 +194,21 @@ local function MHOBN_fake_script() -- _120128312803.LocalScript
 	local frame = main:WaitForChild("MainFrame")
 	local m = frame:WaitForChild("ScrollingFrame")
 	local player = game:GetService("Players").LocalPlayer
+	frame.TopBar.Text = "HUZKI | v"..game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/QuoniamScripting/Huzki/main/versionid")
 	local char = player.Character
 	local map = workspace:WaitForChild("Map")
 	local buildings = map:WaitForChild("Buildings")
+	local ts = game:GetService("TweenService")
 	
 	function teleport(place)
 		if place:FindFirstChild("Floor") then
 			local floor = place:FindFirstChild("Floor"):FindFirstChildOfClass("Part")
-			char:MoveTo(floor.Position+Vector3.new(0,5,0))
+			local t = ts:Create(char:FindFirstChild("HumanoidRootPart"),TweenInfo.new(0.2),{Position = floor.Position+Vector3.new(0,5,0)})
+			t:Play()
 		else
 			local exit = place:FindFirstChild("Exits"):FindFirstChildOfClass("Part")
-			char:MoveTo(exit.Position+Vector3.new(0,5,0))
+			local t = ts:Create(char:FindFirstChild("HumanoidRootPart"),TweenInfo.new(0.2),{Position = exit.Position+Vector3.new(0,5,0)})
+			t:Play()
 		end
 	end
 	
@@ -241,4 +244,4 @@ local function MHOBN_fake_script() -- _120128312803.LocalScript
 		teleport(buildings.LandAgency)
 	end)
 end
-coroutine.wrap(MHOBN_fake_script)()
+coroutine.wrap(UHUROY_fake_script)()
