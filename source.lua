@@ -189,7 +189,7 @@ UICorner_10.CornerRadius = UDim.new(0, 16)
 local function UHUROY_fake_script() -- _120128312803.LocalScript 
 	local script = Instance.new('LocalScript', _120128312803)
 
-	script.Parent.Name = game:GetService("HttpService"):GenerateGUID()
+	script.Parent.Name = "HUZKI?!#!#"
 	local main = script.Parent
 	local frame = main:WaitForChild("MainFrame")
 	local m = frame:WaitForChild("ScrollingFrame")
